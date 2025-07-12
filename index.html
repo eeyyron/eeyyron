@@ -392,15 +392,17 @@
     
     <script>
 
-        // Add loading class on DOM ready
-        document.body.classList.add("loading");
+        // Ensure body starts in loading state when DOM is ready
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loading");
+        });
 
-        // Splash screen removal after window load
+        // Once all assets are loaded, hide splash screen
         window.addEventListener("load", () => {
             setTimeout(() => {
                 document.body.classList.remove("loading");
                 document.body.classList.add("loaded");
-            }, 3000); // 1.2 seconds
+            }, 2200); // adjust to match your animation length
         });
         
         //ANIMATION ON SCROLL
