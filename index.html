@@ -20,6 +20,14 @@
 </head>
 <body>
 
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="/assets/Icons/loading/loading-icon.png" alt="Loading Icon" class="splash-logo">
+            <img src="/assets/Icons/loading/loading.png" alt="Loading Icon" class="spin-logo">
+        </div>
+    </div>
+    
     <!-- NAVIGATION MENU -->
     <header>
         <div class="navbar">
@@ -383,6 +391,18 @@
     </footer>
     
     <script>
+
+        // Add loading class on DOM ready
+        document.body.classList.add("loading");
+
+        // Splash screen removal after window load
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.body.classList.remove("loading");
+                document.body.classList.add("loaded");
+            }, 3000); // 1.2 seconds
+        });
+        
         //ANIMATION ON SCROLL
         AOS.init();
 
