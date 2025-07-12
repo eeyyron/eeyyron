@@ -1046,8 +1046,12 @@ footer{
         border-radius: 18px;
     }
     
+    .text-copyright{
+        font-size: 0.6rem;
+    }
+
     .social-icon{
-    margin: 0.25rem;
-    height: 2rem;
+    margin: 0.10rem;
+    height: auto;
     }
 }
