@@ -392,6 +392,11 @@
     
     <script>
 
+        // Force scroll to top on refresh or load
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+        
         // Ensure body starts in loading state when DOM is ready
         document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("loading");
