@@ -979,14 +979,14 @@ footer{
     }
 
     .box{
-        width: 150px;
+        width: 130px;
         height: 130px;
         font-size: 1rem;
         border-radius: 18px;
     }
 
     .software-icon{
-        height: 2.5rem;
+        height: 2rem;
     }
 
     #projects{
