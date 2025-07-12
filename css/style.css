@@ -294,7 +294,7 @@ header.scrolled {
 #home{
     display: flex;
     margin-top: -5rem;
-    background-image: url(../assets/Background/background.png);
+    background-image: url(../assets/Background/Background.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
