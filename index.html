@@ -392,22 +392,36 @@
     
     <script>
 
-        // Force scroll to top on refresh or load
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        };
-        
-        // Ensure body starts in loading state when DOM is ready
+        let splashDone = false;
+
         document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("loading");
+            document.documentElement.style.scrollBehavior = "auto";
+            window.scrollTo(0, 0);
         });
 
-        // Once all assets are loaded, hide splash screen
+        window.onbeforeunload = function () {
+            document.documentElement.style.scrollBehavior = "auto";
+            window.scrollTo(0, 0);
+        };
+
         window.addEventListener("load", () => {
             setTimeout(() => {
                 document.body.classList.remove("loading");
                 document.body.classList.add("loaded");
-            }, 2200); // adjust to match your animation length
+
+                // Force scroll to top again
+                window.scrollTo(0, 0);
+
+                // Re-enable scroll-based effects after splash
+                setTimeout(() => {
+                    document.documentElement.style.scrollBehavior = "smooth";
+                    splashDone = true;
+
+                    // Manually trigger scroll event for header class logic
+                    window.dispatchEvent(new Event("scroll"));
+                }, 100);
+            }, 2200);
         });
         
         //ANIMATION ON SCROLL
@@ -469,13 +483,14 @@
         //SCROLL HEADER EFFECT FUNCTION
         document.addEventListener('scroll', () => {
             const header = document.querySelector('header');
+            if (!splashDone) return; // Don’t run during splash screen
 
-            if (window.scrollY > 0){
+            if (window.scrollY > 0) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        })
+        });
 
         //ACTIVE LINK ON SCROLL FUNCTION
         const sections = document.querySelectorAll('section');
