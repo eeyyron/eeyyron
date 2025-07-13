@@ -734,7 +734,6 @@ hr{
     overflow: visible;
 }
 
-
 .service-box{
     display: flex;
     flex-direction: column;
@@ -838,8 +837,8 @@ hr{
     margin: 1rem;  
 }
 
-.email-link{
-    text-decoration: none;
+.contact-links{
+    color: var(--black);
 }
 
 .contacts-icon{
