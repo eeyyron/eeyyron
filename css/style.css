@@ -838,6 +838,10 @@ hr{
     margin: 1rem;  
 }
 
+.email-link{
+    text-decoration: none;
+}
+
 .contacts-icon{
     margin-right: 10px;
 }
