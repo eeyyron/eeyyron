@@ -837,6 +837,11 @@ hr{
     margin: 1rem;  
 }
 
+.download-btn{
+    margin-top: 2.10rem;
+    margin-bottom: 0.62rem;
+}
+
 .contact-links{
     color: var(--black);
 }
