@@ -1034,6 +1034,10 @@ footer{
         text-align: left;
     }
 
+    .skill-header{
+        text-align: center;
+    }
+
     h2{
         font-size: 2.5rem;
         text-align: center;
